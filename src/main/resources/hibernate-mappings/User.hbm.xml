@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="com.testingplus.model.User" table="user">
+		<id name="id" column="ID_USER" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="userName" column="USER_NAME" type="string" />
+		<property name="userPassword" column="USER_PASSWORD" type="string"/>
+	</class>
+
+</hibernate-mapping>

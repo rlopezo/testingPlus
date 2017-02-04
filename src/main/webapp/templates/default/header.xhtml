@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+      			xmlns:f="http://java.sun.com/jsf/core"
+          		xmlns:p="http://primefaces.org/ui"  >
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TestingPlus</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    	<h:form id="logoutForm">
+	                    	<p:commandLink id="logoutCommandLink" styleClass="logout" actionListener="#{loginBean.logout}" ajax="false">
+								Logout   	
+	                    	</p:commandLink>
+                    	</h:form>
+                    </li>
+                </ul>
+<!--                 <form class="navbar-form navbar-right"> -->
+<!--                     <input type="text" class="form-control" placeholder="Search..." /> -->
+<!--                 </form> -->
+            </div>
+        </div>
+    </div>
+</ui:composition>
+
