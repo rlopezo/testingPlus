@@ -14,6 +14,8 @@ public class HomeBean implements Serializable {
 	
 	private static final long serialVersionUID = -8236271993232692029L;
 
+	private int menuSelection = 0;
+	
 	public void onload() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		if(!facesContext.getExternalContext().getSessionMap().containsKey("user")) {
@@ -25,5 +27,20 @@ public class HomeBean implements Serializable {
 			}
 		}
 	}
+	
+	public void handleTestCasesSelection() {
+		menuSelection = 0;
+	}
+
+	public int getMenuSelection() {
+		return menuSelection;
+	}
+
+	public void setMenuSelection(int menuSelection) {
+		this.menuSelection = menuSelection;
+	}
+
+	
+	
 
 }

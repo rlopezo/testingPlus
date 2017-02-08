@@ -3,6 +3,38 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  >
-	
-		<h1 class="page-header "> <i class="fa fa-tachometer"></i> Dashboard</h1>
+		
+		<h:form>
+			<h1 class="page-header "> <i class="fa fa-tachometer"></i> Dashboard</h1>
+			<p:outputPanel id="contentPanel">
+				<p:commandButton value="Añadir caso de prueba" actionListener="#{testCaseBean.prepareCreateTestCase}" process="@form" update="@form" rendered="#{!testCaseBean.isAddingTestCase}"/>
+				<p:panel id="dataPanel" rendered="#{testCaseBean.isAddingTestCase}">
+					<p:panelGrid columns="4" styleClass="ui-noborder">
+						<p:outputLabel for="testCaseName" value="Nombre del caso de prueba:"/>
+						<p:inputText id="testCaseName" value="#{testCaseBean.testCase.testCaseName}" required="true"/>
+						<p:outputLabel for="assignedTask" value="Tarea relacionada:"/>
+						<p:inputNumber id="assignedTask" value="#{testCaseBean.testCase.assignedTask}" required="true"/>
+						<p:outputLabel for="isRegressive" value="Regresivo:" />
+						<p:selectBooleanCheckbox id="isRegressive" value="#{testCaseBean.testCase.isRegressive}"/>
+					</p:panelGrid>
+				<p:commandButton value="Guardar" actionListener="#{testCaseBean.createTestCase}" update="@form"/>
+				<p:commandButton value="Cancelar" actionListener="#{testCaseBean.cancelAddingTestCase}" update="@form" immediate="true"/>
+				</p:panel>
+				<p:dataTable id="testCasesTable" value="#{testCaseBean.testCasesList}" var="cp">
+					<p:column headerText="Nombre Caso de Prueba">
+						<h:outputText value="#{cp.testCaseName}"/>
+					</p:column>
+					<p:column headerText="Fecha de creación">
+						<h:outputText />
+					</p:column>
+					<p:column headerText="Regresivo">
+						<h:outputText />
+					</p:column>
+					<p:column headerText="Tarea relacionada">
+						<h:outputText var="#{cp.assignedTask}"/>
+					</p:column>
+				</p:dataTable>
+			</p:outputPanel>
+		</h:form>
+		
 </ui:composition>

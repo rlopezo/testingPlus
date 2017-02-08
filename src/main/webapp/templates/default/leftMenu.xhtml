@@ -1,8 +1,15 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
-
-    <ul class="nav nav-sidebar">
-        <li><a href="#">Casos de prueba</a></li>
-    </ul>
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+	<h:form id="menuSelectionForm">
+	    <ul class="nav nav-sidebar">
+	        <li>
+	        	<p:commandLink actionListener="#{homeBean.handleTestCasesSelection}" update="@form">
+	        		Casos de prueba
+	        	</p:commandLink>
+	       	</li>
+	    </ul>
+    </h:form>
 </ui:composition>
 

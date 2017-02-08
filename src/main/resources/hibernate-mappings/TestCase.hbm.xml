@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+	<class name="com.testingplus.model.TestCase" table="test_case">
+		<id name="id" column="ID_TEST_CASE" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="testCaseName" column="TEST_CASE_NAME" type="string" />
+		<property name="testCaseCreationDate" column="TEST_CASE_CREATION_DATE" type="timestamp"/>
+		<property name="isRegressive" column="IS_REGRESSIVE" type="boolean" />
+		<property name="assignedTask" column="ASSIGNED_TASK" type="int" />
+	</class>
+
+</hibernate-mapping>
