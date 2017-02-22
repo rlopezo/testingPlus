@@ -4,8 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"  >
 		
-		<h:form>
-			<h1 class="page-header "> <i class="fa fa-tachometer"></i> Dashboard</h1>
+			<h1 class="page-header "> <i class="fa fa-tachometer"></i> Casos de prueba</h1>
 			<p:outputPanel id="contentPanel">
 				<p:commandButton value="Añadir caso de prueba" actionListener="#{testCaseBean.prepareCreateTestCase}" process="@form" update="@form" rendered="#{!testCaseBean.isAddingTestCase}"/>
 				<p:panel id="dataPanel" rendered="#{testCaseBean.isAddingTestCase}">
@@ -25,16 +24,14 @@
 						<h:outputText value="#{cp.testCaseName}"/>
 					</p:column>
 					<p:column headerText="Fecha de creación">
-						<h:outputText />
+						<h:outputText value="#{cp.testCaseCreationDate}"/>
 					</p:column>
 					<p:column headerText="Regresivo">
 						<h:outputText />
 					</p:column>
 					<p:column headerText="Tarea relacionada">
-						<h:outputText var="#{cp.assignedTask}"/>
+						<h:outputText value="#{cp.assignedTask}"/>
 					</p:column>
 				</p:dataTable>
 			</p:outputPanel>
-		</h:form>
-		
 </ui:composition>

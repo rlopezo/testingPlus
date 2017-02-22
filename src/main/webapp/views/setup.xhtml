@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+		
+			<h1 class="page-header "> <i class="fa fa-tachometer"></i> Configuración</h1>
+			<p:outputPanel id="setupContentPanel">
+				<p:panel >
+					<p:outputLabel for="url" value="URL de JIRA: "/>
+					<p:inputText id="url" />
+				</p:panel>
+				<p:panel>
+					<p:outputLabel for="project" value="Nombre proyecto: "/>
+					<p:inputText id="project" />
+				</p:panel>
+				<p:commandButton value="Guardar"/>
+			</p:outputPanel>
+</ui:composition>

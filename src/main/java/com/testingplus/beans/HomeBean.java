@@ -31,6 +31,14 @@ public class HomeBean implements Serializable {
 	public void handleTestCasesSelection() {
 		menuSelection = 0;
 	}
+	
+	public void handleSetupSelection() {
+		menuSelection = 1;
+	}
+	
+	public void handleUsersSelection() {
+		menuSelection = 2;
+	}
 
 	public int getMenuSelection() {
 		return menuSelection;

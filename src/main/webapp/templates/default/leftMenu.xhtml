@@ -2,14 +2,22 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://java.sun.com/jsf/html">
-	<h:form id="menuSelectionForm">
-	    <ul class="nav nav-sidebar">
-	        <li>
-	        	<p:commandLink actionListener="#{homeBean.handleTestCasesSelection}" update="@form">
-	        		Casos de prueba
-	        	</p:commandLink>
-	       	</li>
-	    </ul>
-    </h:form>
+    <ul class="nav nav-sidebar">
+        <li>
+        	<p:commandLink actionListener="#{homeBean.handleTestCasesSelection}" update="@form">
+        		Casos de prueba
+        	</p:commandLink>
+       	</li>
+       	<li>
+        	<p:commandLink actionListener="#{homeBean.handleSetupSelection}" update="@form">
+        		Configuración
+        	</p:commandLink>	       	
+       	</li>
+       	<li>
+        	<p:commandLink actionListener="#{homeBean.handleUsersSelection}" update="@form">
+        		Usuarios
+        	</p:commandLink>	       	
+       	</li>
+    </ul>
 </ui:composition>
 
